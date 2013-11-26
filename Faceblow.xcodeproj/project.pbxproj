@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		286400FC307D406DBB565248 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63964D5B7931411E8FF60F1A /* libPods.a */; };
+		3397601F9E4B4CC21A88191F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33976DFC315E13A51E7770CD /* Images.xcassets */; };
+		33976099B4888D858B7B176D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 339760194DAFA7029BCDDF35 /* InfoPlist.strings */; };
+		339761F097B423D9A05E308A /* THAGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976314E243A2A13DA95C07 /* THAGMainViewController.m */; };
+		33976337DC3A574C4967ECD1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33976D1404BCF578C080093C /* CoreGraphics.framework */; };
+		3397635375FBD9864581E7D5 /* FaceblowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976FFABA1884A10C45B41A /* FaceblowTests.m */; };
+		339765F93D1EF113C28DC7F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33976D15D10BA5BF42B9D23E /* Foundation.framework */; };
+		3397660C17D7DECC29FBA5DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33976D15D10BA5BF42B9D23E /* Foundation.framework */; };
+		3397661C552351B3B75BF838 /* THAGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3397659ECCF7D78B06442E33 /* THAGAppDelegate.m */; };
+		339766B2E01B08719A18F917 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 339762424D87C8713233EF38 /* InfoPlist.strings */; };
+		33976740B1F0307F1A57A47B /* THAGApiHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976F0078B948E5E6C0FB23 /* THAGApiHandler.m */; };
+		339768EFEE1C4CD9F3B88409 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3397612D8F15CB0484ADC98D /* UIKit.framework */; };
+		33976918D6ADC1FC91FE8CB4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339767A75039EC0A495FCB10 /* XCTest.framework */; };
+		3397691BEBEA7AAA54DC55B9 /* THAGMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 339762E81DAAF8D8C7DCB06E /* THAGMapView.m */; };
+		33976B8D99F259523C28B44B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3397638629A0957F0386F773 /* MapKit.framework */; };
+		33976BAA13C56851E433E7F4 /* THAGPlantedMineAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976F6C390E17FA9EEA05DE /* THAGPlantedMineAnnotation.m */; };
+		33976C1EFF340E1155AE1C95 /* THAGPlantedMineAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 339769A66A00C4A401701EDF /* THAGPlantedMineAnnotationView.m */; };
+		33976C8F6EBFE427B7E7DE2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3397612D8F15CB0484ADC98D /* UIKit.framework */; };
+		33976D44E45B4F28C5CAB2DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976F9B66127516FD1F209A /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3397669115A9D5F8CBC60526 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3397659483731DA43069C22A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3397616846EEE3A64D0EE5B5;
+			remoteInfo = Faceblow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0605719349104093A2FB02F3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		3397605E4ACA1CFCBD6638D3 /* THAGPlantedMineAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGPlantedMineAnnotation.h; sourceTree = "<group>"; };
+		3397612D8F15CB0484ADC98D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3397627F8CDBD9F7C4AA3B28 /* FaceblowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "FaceblowTests-Info.plist"; sourceTree = "<group>"; };
+		339762E81DAAF8D8C7DCB06E /* THAGMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGMapView.m; sourceTree = "<group>"; };
+		33976314E243A2A13DA95C07 /* THAGMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGMainViewController.m; sourceTree = "<group>"; };
+		3397638629A0957F0386F773 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		33976479473DB01A45B76B0F /* FaceblowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceblowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3397648A60D523F3A25315EE /* THAGPlantedMineAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGPlantedMineAnnotationView.h; sourceTree = "<group>"; };
+		339764C03F00FDBD2D04771D /* THAGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THAGAppDelegate.h; sourceTree = "<group>"; };
+		339765800B32F9B4713436DF /* Faceblow-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "Faceblow-Info.plist"; sourceTree = "<group>"; };
+		3397659ECCF7D78B06442E33 /* THAGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THAGAppDelegate.m; sourceTree = "<group>"; };
+		3397664DA66EDC2F3B305C61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		339767A75039EC0A495FCB10 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3397680A4D31D6BF8C89B958 /* THAGMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGMainViewController.h; sourceTree = "<group>"; };
+		3397683FEE1D5E3120777D2B /* THAGApiHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGApiHandler.h; sourceTree = "<group>"; };
+		339768C44BCC2FE324BA74BD /* Faceblow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Faceblow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		339769A66A00C4A401701EDF /* THAGPlantedMineAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGPlantedMineAnnotationView.m; sourceTree = "<group>"; };
+		33976A92E7F04307972A3356 /* THAGMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGMapView.h; sourceTree = "<group>"; };
+		33976D1404BCF578C080093C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		33976D15D10BA5BF42B9D23E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		33976DFC315E13A51E7770CD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		33976F0078B948E5E6C0FB23 /* THAGApiHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGApiHandler.m; sourceTree = "<group>"; };
+		33976F6C390E17FA9EEA05DE /* THAGPlantedMineAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGPlantedMineAnnotation.m; sourceTree = "<group>"; };
+		33976F8D9A13DDF5AFDB952F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		33976F9B66127516FD1F209A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		33976F9F7BA5E6E181BE4F34 /* Faceblow-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Faceblow-Prefix.pch"; sourceTree = "<group>"; };
+		33976FFABA1884A10C45B41A /* FaceblowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceblowTests.m; sourceTree = "<group>"; };
+		63964D5B7931411E8FF60F1A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		339762D99E3A0F9162210682 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33976918D6ADC1FC91FE8CB4 /* XCTest.framework in Frameworks */,
+				3397660C17D7DECC29FBA5DD /* Foundation.framework in Frameworks */,
+				339768EFEE1C4CD9F3B88409 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33976FBD443E9C17F4782AE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				339765F93D1EF113C28DC7F1 /* Foundation.framework in Frameworks */,
+				33976337DC3A574C4967ECD1 /* CoreGraphics.framework in Frameworks */,
+				33976C8F6EBFE427B7E7DE2A /* UIKit.framework in Frameworks */,
+				286400FC307D406DBB565248 /* libPods.a in Frameworks */,
+				33976B8D99F259523C28B44B /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		339762DDE918568B79348F73 /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				339769A66A00C4A401701EDF /* THAGPlantedMineAnnotationView.m */,
+				3397648A60D523F3A25315EE /* THAGPlantedMineAnnotationView.h */,
+				33976F6C390E17FA9EEA05DE /* THAGPlantedMineAnnotation.m */,
+				3397605E4ACA1CFCBD6638D3 /* THAGPlantedMineAnnotation.h */,
+			);
+			path = Annotations;
+			sourceTree = "<group>";
+		};
+		339765EFC6E759AC0AA6E4FA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3397627F8CDBD9F7C4AA3B28 /* FaceblowTests-Info.plist */,
+				339762424D87C8713233EF38 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3397675D64FEC689A7184A2C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				339765800B32F9B4713436DF /* Faceblow-Info.plist */,
+				339760194DAFA7029BCDDF35 /* InfoPlist.strings */,
+				33976F9B66127516FD1F209A /* main.m */,
+				33976F9F7BA5E6E181BE4F34 /* Faceblow-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3397684195EA3E97D0829672 /* Faceblow */ = {
+			isa = PBXGroup;
+			children = (
+				3397675D64FEC689A7184A2C /* Supporting Files */,
+				339764C03F00FDBD2D04771D /* THAGAppDelegate.h */,
+				3397659ECCF7D78B06442E33 /* THAGAppDelegate.m */,
+				33976DFC315E13A51E7770CD /* Images.xcassets */,
+				33976F0078B948E5E6C0FB23 /* THAGApiHandler.m */,
+				3397683FEE1D5E3120777D2B /* THAGApiHandler.h */,
+				33976314E243A2A13DA95C07 /* THAGMainViewController.m */,
+				3397680A4D31D6BF8C89B958 /* THAGMainViewController.h */,
+				339762E81DAAF8D8C7DCB06E /* THAGMapView.m */,
+				33976A92E7F04307972A3356 /* THAGMapView.h */,
+				339762DDE918568B79348F73 /* Annotations */,
+			);
+			path = Faceblow;
+			sourceTree = "<group>";
+		};
+		33976ABFCE137438FD840904 = {
+			isa = PBXGroup;
+			children = (
+				33976C59885EA3C2B3667B55 /* Products */,
+				33976C6866E813D38EC66B0C /* Frameworks */,
+				3397684195EA3E97D0829672 /* Faceblow */,
+				33976C6DBC407254AC9647C6 /* FaceblowTests */,
+				0605719349104093A2FB02F3 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		33976C59885EA3C2B3667B55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				339768C44BCC2FE324BA74BD /* Faceblow.app */,
+				33976479473DB01A45B76B0F /* FaceblowTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		33976C6866E813D38EC66B0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33976D15D10BA5BF42B9D23E /* Foundation.framework */,
+				33976D1404BCF578C080093C /* CoreGraphics.framework */,
+				3397612D8F15CB0484ADC98D /* UIKit.framework */,
+				339767A75039EC0A495FCB10 /* XCTest.framework */,
+				63964D5B7931411E8FF60F1A /* libPods.a */,
+				3397638629A0957F0386F773 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		33976C6DBC407254AC9647C6 /* FaceblowTests */ = {
+			isa = PBXGroup;
+			children = (
+				339765EFC6E759AC0AA6E4FA /* Supporting Files */,
+				33976FFABA1884A10C45B41A /* FaceblowTests.m */,
+			);
+			path = FaceblowTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3397616846EEE3A64D0EE5B5 /* Faceblow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 339769F78DA37211B18282C8 /* Build configuration list for PBXNativeTarget "Faceblow" */;
+			buildPhases = (
+				4209F5F4F31047CE843A8653 /* Check Pods Manifest.lock */,
+				339763DF4D422E9E50D456D2 /* Sources */,
+				33976FBD443E9C17F4782AE6 /* Frameworks */,
+				33976302EC6059416E0ECE73 /* Resources */,
+				4BFF2C92285645A8806236D8 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Faceblow;
+			productName = Faceblow;
+			productReference = 339768C44BCC2FE324BA74BD /* Faceblow.app */;
+			productType = "com.apple.product-type.application";
+		};
+		33976FFA32AF9473203AFA71 /* FaceblowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33976A045D969CC71D433360 /* Build configuration list for PBXNativeTarget "FaceblowTests" */;
+			buildPhases = (
+				33976D77E8DEB47D640CB215 /* Sources */,
+				339762D99E3A0F9162210682 /* Frameworks */,
+				3397602973C03B6CE96FD3BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33976454704BD6F5A2B163FD /* PBXTargetDependency */,
+			);
+			name = FaceblowTests;
+			productName = FaceblowTests;
+			productReference = 33976479473DB01A45B76B0F /* FaceblowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3397659483731DA43069C22A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Thag Industries";
+				TargetAttributes = {
+					3397616846EEE3A64D0EE5B5 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 33976E6010DF5FBC1EA2AC44 /* Build configuration list for PBXProject "Faceblow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 33976ABFCE137438FD840904;
+			productRefGroup = 33976C59885EA3C2B3667B55 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3397616846EEE3A64D0EE5B5 /* Faceblow */,
+				33976FFA32AF9473203AFA71 /* FaceblowTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3397602973C03B6CE96FD3BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				339766B2E01B08719A18F917 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33976302EC6059416E0ECE73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33976099B4888D858B7B176D /* InfoPlist.strings in Resources */,
+				3397601F9E4B4CC21A88191F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4209F5F4F31047CE843A8653 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4BFF2C92285645A8806236D8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		339763DF4D422E9E50D456D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33976D44E45B4F28C5CAB2DB /* main.m in Sources */,
+				3397661C552351B3B75BF838 /* THAGAppDelegate.m in Sources */,
+				33976740B1F0307F1A57A47B /* THAGApiHandler.m in Sources */,
+				339761F097B423D9A05E308A /* THAGMainViewController.m in Sources */,
+				3397691BEBEA7AAA54DC55B9 /* THAGMapView.m in Sources */,
+				33976C1EFF340E1155AE1C95 /* THAGPlantedMineAnnotationView.m in Sources */,
+				33976BAA13C56851E433E7F4 /* THAGPlantedMineAnnotation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33976D77E8DEB47D640CB215 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3397635375FBD9864581E7D5 /* FaceblowTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		33976454704BD6F5A2B163FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3397616846EEE3A64D0EE5B5 /* Faceblow */;
+			targetProxy = 3397669115A9D5F8CBC60526 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		339760194DAFA7029BCDDF35 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3397664DA66EDC2F3B305C61 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		339762424D87C8713233EF38 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33976F8D9A13DDF5AFDB952F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3397633D6BBB62D98EE7BAAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3397634CB3B43ADB2BCFE3C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Faceblow/Faceblow-Prefix.pch";
+				INFOPLIST_FILE = "FaceblowTests/FaceblowTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		339763FFE0298AEA93F1F249 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		33976627A6C3C0689A02E824 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Faceblow/Faceblow-Prefix.pch";
+				INFOPLIST_FILE = "FaceblowTests/FaceblowTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		339768BC8EB5639E2298EF03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0605719349104093A2FB02F3 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Faceblow/Faceblow-Prefix.pch";
+				INFOPLIST_FILE = "Faceblow/Faceblow-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		339769C4A22CF2C8C66EB104 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0605719349104093A2FB02F3 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Faceblow/Faceblow-Prefix.pch";
+				INFOPLIST_FILE = "Faceblow/Faceblow-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		339769F78DA37211B18282C8 /* Build configuration list for PBXNativeTarget "Faceblow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				339769C4A22CF2C8C66EB104 /* Release */,
+				339768BC8EB5639E2298EF03 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33976A045D969CC71D433360 /* Build configuration list for PBXNativeTarget "FaceblowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33976627A6C3C0689A02E824 /* Release */,
+				3397634CB3B43ADB2BCFE3C6 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33976E6010DF5FBC1EA2AC44 /* Build configuration list for PBXProject "Faceblow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				339763FFE0298AEA93F1F249 /* Release */,
+				3397633D6BBB62D98EE7BAAE /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3397659483731DA43069C22A /* Project object */;
+}
