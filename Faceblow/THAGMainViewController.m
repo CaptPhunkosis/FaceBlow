@@ -102,16 +102,14 @@ static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
 
 
 - (void)checkForMinesComplete:(NSDictionary *)results {
-    if(results && [results objectForKey:@"data"] != nil){
-
-        NSDictionary *data = [results objectForKey:@"data"];
-        NSArray *userMines = [data objectForKey:@"users"];
-        NSArray *otherMines = [data objectForKey:@"others"];
+    if(results){
+        NSArray *userMines = [results objectForKey:@"userMines"];
+        NSArray *otherMines = [results objectForKey:@"otherMines"];
         _userCanLayMine = [userMines count] <= 0 && [otherMines count] <= 0;
 
         if(otherMines.count > 0){
-            NSDictionary *mineToTrip = [otherMines objectAtIndex:0];
-            [_apiHandler tripMine:[mineToTrip objectForKey:@"_id"]];
+            THAGMine *mineToTrip = [otherMines objectAtIndex:0];
+            [_apiHandler tripMine:mineToTrip.id];
         }
     }
 }

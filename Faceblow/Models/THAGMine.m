@@ -19,7 +19,6 @@
 -(id)initWithDataDictionary:(NSDictionary *)dataDict {
     self = [super init];
     if(self != nil){
-
         _id = [dataDict objectForKey:@"id"];
         NSString *latitudeString = [dataDict objectForKey:@"lat"];
         NSString *longitudeString = [dataDict objectForKey:@"long"];

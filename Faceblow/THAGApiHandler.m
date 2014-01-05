@@ -59,8 +59,32 @@ static NSString * const APIENDPOINT = @"http://localhost:3000";
     NSDictionary *params = @{@"latitude": latitude, @"longitude": longitude};
 
     [manager GET:endPoint parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject){
+        NSMutableArray *userMines = [[NSMutableArray alloc] init];
+        NSMutableArray *otherMines = [[NSMutableArray alloc] init];
+
+        if(responseObject && [responseObject objectForKey:@"data"]){
+            NSDictionary *data = [responseObject objectForKey:@"data"];
+
+            if([data objectForKey:@"users"]){
+                for(NSDictionary *userMine in [data objectForKey:@"users"]){
+                    THAGMine *newMine = [[THAGMine alloc] initWithDataDictionary:userMine];
+                    [userMines addObject:newMine];
+                }
+            }
+
+            if([data objectForKey:@"others"]){
+                for(NSDictionary *otherMine in [data objectForKey:@"others"]){
+                    THAGMine *newMine = [[THAGMine alloc] initWithDataDictionary:otherMine];
+                    [otherMines addObject:newMine];
+                }
+            }
+
+        }
+
+        NSDictionary *results = @{@"userMines": userMines, @"otherMines": otherMines};
+
         if(self.delegate != nil){
-            [self.delegate checkForMinesComplete:responseObject];
+            [self.delegate checkForMinesComplete:results];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error){
         NSLog(@"CHECK FOR MINE ERROR %@", error);
