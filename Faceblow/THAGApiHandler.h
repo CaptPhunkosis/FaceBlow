@@ -5,14 +5,16 @@
 
 #import <Foundation/Foundation.h>
 #import "AFHTTPRequestOperationManager.h"
+#import "THAGUserState.h"
+#import "THAGMine.h"
 #import "THAGTrippedMine.h"
 
 @protocol THAGApiHandlerDelegate <NSObject>
 @required
-- (void) fetchUserStateComplete:(NSDictionary *)results;
+- (void) fetchUserStateComplete:(THAGUserState *)results;
 - (void) checkForMinesComplete:(NSDictionary *)results;
 - (void) placeNewMineComplete:(NSDictionary *)results;
-- (void) tripMineComplete:(NSDictionary *)results;
+- (void) tripMineComplete:(THAGTrippedMine *)results;
 @end
 
 

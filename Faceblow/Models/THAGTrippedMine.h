@@ -4,16 +4,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <MapKit/MapKit.h>
+#import "THAGMine.h"
 
-@interface THAGTrippedMine : NSObject
+@interface THAGTrippedMine : THAGMine
 
+@property NSDate *explodedAt;
 @property NSString *bombedId;
 @property NSString *bomberId;
-@property NSDate *explodedAt;
-@property NSString *id;
-@property CLLocation *location;
 
 
 -(id)initWithDataDictionary:(NSDictionary *)dataDict;
+
 @end

@@ -51,7 +51,7 @@ static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
 #pragma mark - Map View
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-    //Diable callout
+    //Disable callout
     //userLocation.title = @"";
 
     MKCoordinateRegion region = {{0.0, 0.0}, {0.0, 0.0}};
@@ -94,18 +94,17 @@ static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
 
 #pragma mark - Data
 
-- (void)fetchUserStateComplete:(NSDictionary *)results {
-    if(results && [results valueForKey:@"data"] != nil){
-        NSDictionary *data = [results valueForKey:@"data"];
-        [_mapView updatePlantedMines:[data valueForKey:@"plantedMines"]];
+- (void)fetchUserStateComplete:(THAGUserState *)userState {
+    if(userState){
+        [_mapView updatePlantedMines:userState.plantedMines];
     }
 }
 
 
 - (void)checkForMinesComplete:(NSDictionary *)results {
-    if(results && [results valueForKey:@"data"] != nil){
+    if(results && [results objectForKey:@"data"] != nil){
 
-        NSDictionary *data = [results valueForKey:@"data"];
+        NSDictionary *data = [results objectForKey:@"data"];
         NSArray *userMines = [data objectForKey:@"users"];
         NSArray *otherMines = [data objectForKey:@"others"];
         _userCanLayMine = [userMines count] <= 0 && [otherMines count] <= 0;
@@ -123,9 +122,11 @@ static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
 
 
 - (void)tripMineComplete:(THAGTrippedMine *)trippedMine {
-    THAGTrippeMineViewController *trippedVC = [[THAGTrippeMineViewController alloc] initWithMine:trippedMine];
-    [trippedVC setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
-    [self presentViewController:trippedVC animated:YES completion:nil];
+    if(trippedMine){
+        THAGTrippeMineViewController *trippedVC = [[THAGTrippeMineViewController alloc] initWithMine:trippedMine];
+        [trippedVC setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+        [self presentViewController:trippedVC animated:YES completion:nil];
+    }
 }
 
 

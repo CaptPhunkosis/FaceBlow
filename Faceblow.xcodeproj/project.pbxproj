@@ -22,12 +22,14 @@
 		339768EFEE1C4CD9F3B88409 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3397612D8F15CB0484ADC98D /* UIKit.framework */; };
 		33976918D6ADC1FC91FE8CB4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339767A75039EC0A495FCB10 /* XCTest.framework */; };
 		3397691BEBEA7AAA54DC55B9 /* THAGMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 339762E81DAAF8D8C7DCB06E /* THAGMapView.m */; };
+		33976B8D06EEED02B8F5AD01 /* THAGUserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 339760A3757D053E623F9F32 /* THAGUserState.m */; };
 		33976B8D99F259523C28B44B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3397638629A0957F0386F773 /* MapKit.framework */; };
 		33976BAA13C56851E433E7F4 /* THAGPlantedMineAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976F6C390E17FA9EEA05DE /* THAGPlantedMineAnnotation.m */; };
 		33976C1EFF340E1155AE1C95 /* THAGPlantedMineAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 339769A66A00C4A401701EDF /* THAGPlantedMineAnnotationView.m */; };
 		33976C8F6EBFE427B7E7DE2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3397612D8F15CB0484ADC98D /* UIKit.framework */; };
 		33976D44E45B4F28C5CAB2DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976F9B66127516FD1F209A /* main.m */; };
 		33976D574070A689921A5AAE /* THAGTrippeMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3397694D3747622E00B94E3B /* THAGTrippeMineViewController.m */; };
+		33976F4B8C6BA2D5BEDCFCBD /* THAGMine.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976F2C3681F25B09179350 /* THAGMine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +45,9 @@
 /* Begin PBXFileReference section */
 		0605719349104093A2FB02F3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		3397605E4ACA1CFCBD6638D3 /* THAGPlantedMineAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGPlantedMineAnnotation.h; sourceTree = "<group>"; };
+		339760A3757D053E623F9F32 /* THAGUserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGUserState.m; sourceTree = "<group>"; };
 		3397612D8F15CB0484ADC98D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		33976219AFAA3A170B279CF0 /* THAGUserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGUserState.h; sourceTree = "<group>"; };
 		3397627F8CDBD9F7C4AA3B28 /* FaceblowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "FaceblowTests-Info.plist"; sourceTree = "<group>"; };
 		339762BCD39B8B036228EB24 /* THAGTrippeMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGTrippeMineViewController.h; sourceTree = "<group>"; };
 		339762E81DAAF8D8C7DCB06E /* THAGMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGMapView.m; sourceTree = "<group>"; };
@@ -59,6 +63,7 @@
 		3397680A4D31D6BF8C89B958 /* THAGMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGMainViewController.h; sourceTree = "<group>"; };
 		3397683FEE1D5E3120777D2B /* THAGApiHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGApiHandler.h; sourceTree = "<group>"; };
 		339768C44BCC2FE324BA74BD /* Faceblow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Faceblow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		339769262BBC807C306E4D81 /* THAGMine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGMine.h; sourceTree = "<group>"; };
 		3397694D3747622E00B94E3B /* THAGTrippeMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGTrippeMineViewController.m; sourceTree = "<group>"; };
 		339769A66A00C4A401701EDF /* THAGPlantedMineAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGPlantedMineAnnotationView.m; sourceTree = "<group>"; };
 		33976A92E7F04307972A3356 /* THAGMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGMapView.h; sourceTree = "<group>"; };
@@ -68,6 +73,7 @@
 		33976F0078B948E5E6C0FB23 /* THAGApiHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGApiHandler.m; sourceTree = "<group>"; };
 		33976F247109FE1989EFCBC0 /* THAGTrippedMine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGTrippedMine.m; sourceTree = "<group>"; };
 		33976F267EC43018BCF47AE1 /* THAGTrippedMine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGTrippedMine.h; sourceTree = "<group>"; };
+		33976F2C3681F25B09179350 /* THAGMine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGMine.m; sourceTree = "<group>"; };
 		33976F6C390E17FA9EEA05DE /* THAGPlantedMineAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGPlantedMineAnnotation.m; sourceTree = "<group>"; };
 		33976F8D9A13DDF5AFDB952F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		33976F9B66127516FD1F209A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -107,6 +113,10 @@
 			children = (
 				33976F247109FE1989EFCBC0 /* THAGTrippedMine.m */,
 				33976F267EC43018BCF47AE1 /* THAGTrippedMine.h */,
+				33976F2C3681F25B09179350 /* THAGMine.m */,
+				339769262BBC807C306E4D81 /* THAGMine.h */,
+				339760A3757D053E623F9F32 /* THAGUserState.m */,
+				33976219AFAA3A170B279CF0 /* THAGUserState.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -348,6 +358,8 @@
 				33976BAA13C56851E433E7F4 /* THAGPlantedMineAnnotation.m in Sources */,
 				33976D574070A689921A5AAE /* THAGTrippeMineViewController.m in Sources */,
 				339765F5D71D903AA5C5E87B /* THAGTrippedMine.m in Sources */,
+				33976F4B8C6BA2D5BEDCFCBD /* THAGMine.m in Sources */,
+				33976B8D06EEED02B8F5AD01 /* THAGUserState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,14 +29,10 @@
 
 - (void)updatePlantedMines:(NSArray *)plantedMines {
     if(plantedMines != nil){
-        for(NSDictionary *plantedMine in plantedMines){
-            NSNumber *longitude = [plantedMine valueForKey:@"long"];
-            NSNumber *latitude = [plantedMine valueForKey:@"lat"];
-
+        for(THAGMine *plantedMine in plantedMines){
             THAGPlantedMineAnnotation *newPoint = [[THAGPlantedMineAnnotation alloc] init];
-            newPoint.latitude = latitude;
-            newPoint.longitude = longitude;
-
+            newPoint.latitude = [NSNumber numberWithDouble:plantedMine.location.coordinate.latitude];
+            newPoint.longitude = [NSNumber numberWithDouble:plantedMine.location.coordinate.longitude];
             [self addAnnotation:newPoint];
         }
     }

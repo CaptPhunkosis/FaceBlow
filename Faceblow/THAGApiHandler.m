@@ -30,16 +30,29 @@ static NSString * const APIENDPOINT = @"http://localhost:3000";
 - (void)fetchUserState {
     NSString *endPoint = [NSString stringWithFormat:@"%@/user/%@", APIENDPOINT, self.uuid];
     [manager GET:endPoint parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject){
-        if([responseObject isKindOfClass:[NSDictionary class]]){
-            if(self.delegate != nil){
-                [self.delegate fetchUserStateComplete:(NSDictionary *)responseObject];
+        THAGUserState *userState = nil;
+
+        if(responseObject && [responseObject objectForKey:@"data"]){
+            NSDictionary *data = [responseObject valueForKey:@"data"];
+            if([data isKindOfClass:[NSDictionary class]] && [data objectForKey:@"user"]){
+                userState = [[THAGUserState alloc] initWithDataDictionary:[data objectForKey:@"user"]];
+
+                for(NSDictionary *plantedMine in [data objectForKey:@"plantedMines"]){
+                    THAGMine *newMine = [[THAGMine alloc] initWithDataDictionary:plantedMine];
+                    [userState.plantedMines addObject:newMine];
+                }
             }
+        }
+
+        if(self.delegate != nil){
+            [self.delegate fetchUserStateComplete:userState];
         }
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error){
         NSLog(@"FETCH USER ERROR %@", error);
     }];
 }
+
 
 - (void)checkForMines:(NSNumber *)latitude longitude:(NSNumber *)longitude {
     NSString *endPoint = [NSString stringWithFormat:@"%@/user/%@/checkformines", APIENDPOINT, self.uuid];
@@ -53,6 +66,7 @@ static NSString * const APIENDPOINT = @"http://localhost:3000";
         NSLog(@"CHECK FOR MINE ERROR %@", error);
     }];
 }
+
 
 - (void)placeNewMine:(NSNumber *)latitude longitude:(NSNumber *)longitude {
     NSString *endPoint = [NSString stringWithFormat:@"%@/user/%@/plantmine", APIENDPOINT, self.uuid];
