@@ -43,9 +43,8 @@ static NSString * const APIENDPOINT = @"http://localhost:3000";
 
 - (void)checkForMines:(NSNumber *)latitude longitude:(NSNumber *)longitude {
     NSString *endPoint = [NSString stringWithFormat:@"%@/user/%@/checkformines", APIENDPOINT, self.uuid];
-    NSArray *keys = [NSArray arrayWithObjects:@"latitude", @"longitude", nil];
-    NSArray *objects = [NSArray arrayWithObjects:latitude, longitude, nil];
-    NSDictionary *params = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+    NSDictionary *params = @{@"latitude": latitude, @"longitude": longitude};
+
     [manager GET:endPoint parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject){
         if(self.delegate != nil){
             [self.delegate checkForMinesComplete:responseObject];
@@ -57,9 +56,7 @@ static NSString * const APIENDPOINT = @"http://localhost:3000";
 
 - (void)placeNewMine:(NSNumber *)latitude longitude:(NSNumber *)longitude {
     NSString *endPoint = [NSString stringWithFormat:@"%@/user/%@/plantmine", APIENDPOINT, self.uuid];
-    NSArray *keys = [NSArray arrayWithObjects:@"latitude", @"longitude", nil];
-    NSArray *objects = [NSArray arrayWithObjects:latitude, longitude, nil];
-    NSDictionary *params = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+    NSDictionary *params = @{@"latitude": latitude, @"longitude": longitude};
 
     [manager POST:endPoint parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject){
         if(self.delegate != nil){
@@ -70,5 +67,24 @@ static NSString * const APIENDPOINT = @"http://localhost:3000";
     }];
 }
 
+
+- (void)tripMine:(NSString *)mineID {
+    NSString *endPoint = [NSString stringWithFormat:@"%@/user/%@/tripMine", APIENDPOINT, self.uuid];
+    NSDictionary *params = @{@"mineID": mineID};
+
+    [manager POST:endPoint parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject){
+        THAGTrippedMine *trippedMine = nil;
+
+        if(responseObject && [responseObject objectForKey:@"data"]) {
+            trippedMine = [[THAGTrippedMine alloc] initWithDataDictionary:[responseObject objectForKey:@"data"]];
+        }
+
+        if(self.delegate != nil){
+            [self.delegate tripMineComplete:trippedMine];
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+        NSLog(@"TRIP MINE ERROR %@", error);
+    }];
+}
 
 @end

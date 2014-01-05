@@ -13,6 +13,7 @@
 		339761F097B423D9A05E308A /* THAGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976314E243A2A13DA95C07 /* THAGMainViewController.m */; };
 		33976337DC3A574C4967ECD1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33976D1404BCF578C080093C /* CoreGraphics.framework */; };
 		3397635375FBD9864581E7D5 /* FaceblowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976FFABA1884A10C45B41A /* FaceblowTests.m */; };
+		339765F5D71D903AA5C5E87B /* THAGTrippedMine.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976F247109FE1989EFCBC0 /* THAGTrippedMine.m */; };
 		339765F93D1EF113C28DC7F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33976D15D10BA5BF42B9D23E /* Foundation.framework */; };
 		3397660C17D7DECC29FBA5DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33976D15D10BA5BF42B9D23E /* Foundation.framework */; };
 		3397661C552351B3B75BF838 /* THAGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3397659ECCF7D78B06442E33 /* THAGAppDelegate.m */; };
@@ -26,6 +27,7 @@
 		33976C1EFF340E1155AE1C95 /* THAGPlantedMineAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 339769A66A00C4A401701EDF /* THAGPlantedMineAnnotationView.m */; };
 		33976C8F6EBFE427B7E7DE2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3397612D8F15CB0484ADC98D /* UIKit.framework */; };
 		33976D44E45B4F28C5CAB2DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976F9B66127516FD1F209A /* main.m */; };
+		33976D574070A689921A5AAE /* THAGTrippeMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3397694D3747622E00B94E3B /* THAGTrippeMineViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,7 @@
 		3397605E4ACA1CFCBD6638D3 /* THAGPlantedMineAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGPlantedMineAnnotation.h; sourceTree = "<group>"; };
 		3397612D8F15CB0484ADC98D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3397627F8CDBD9F7C4AA3B28 /* FaceblowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "FaceblowTests-Info.plist"; sourceTree = "<group>"; };
+		339762BCD39B8B036228EB24 /* THAGTrippeMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGTrippeMineViewController.h; sourceTree = "<group>"; };
 		339762E81DAAF8D8C7DCB06E /* THAGMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGMapView.m; sourceTree = "<group>"; };
 		33976314E243A2A13DA95C07 /* THAGMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGMainViewController.m; sourceTree = "<group>"; };
 		3397638629A0957F0386F773 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -56,12 +59,15 @@
 		3397680A4D31D6BF8C89B958 /* THAGMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGMainViewController.h; sourceTree = "<group>"; };
 		3397683FEE1D5E3120777D2B /* THAGApiHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGApiHandler.h; sourceTree = "<group>"; };
 		339768C44BCC2FE324BA74BD /* Faceblow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Faceblow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3397694D3747622E00B94E3B /* THAGTrippeMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGTrippeMineViewController.m; sourceTree = "<group>"; };
 		339769A66A00C4A401701EDF /* THAGPlantedMineAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGPlantedMineAnnotationView.m; sourceTree = "<group>"; };
 		33976A92E7F04307972A3356 /* THAGMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGMapView.h; sourceTree = "<group>"; };
 		33976D1404BCF578C080093C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		33976D15D10BA5BF42B9D23E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		33976DFC315E13A51E7770CD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		33976F0078B948E5E6C0FB23 /* THAGApiHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGApiHandler.m; sourceTree = "<group>"; };
+		33976F247109FE1989EFCBC0 /* THAGTrippedMine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGTrippedMine.m; sourceTree = "<group>"; };
+		33976F267EC43018BCF47AE1 /* THAGTrippedMine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGTrippedMine.h; sourceTree = "<group>"; };
 		33976F6C390E17FA9EEA05DE /* THAGPlantedMineAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGPlantedMineAnnotation.m; sourceTree = "<group>"; };
 		33976F8D9A13DDF5AFDB952F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		33976F9B66127516FD1F209A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3397610E9C8963F47A98D8BC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				33976F247109FE1989EFCBC0 /* THAGTrippedMine.m */,
+				33976F267EC43018BCF47AE1 /* THAGTrippedMine.h */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		339762DDE918568B79348F73 /* Annotations */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +156,9 @@
 				339762E81DAAF8D8C7DCB06E /* THAGMapView.m */,
 				33976A92E7F04307972A3356 /* THAGMapView.h */,
 				339762DDE918568B79348F73 /* Annotations */,
+				3397694D3747622E00B94E3B /* THAGTrippeMineViewController.m */,
+				339762BCD39B8B036228EB24 /* THAGTrippeMineViewController.h */,
+				3397610E9C8963F47A98D8BC /* Models */,
 			);
 			path = Faceblow;
 			sourceTree = "<group>";
@@ -236,6 +254,7 @@
 				ORGANIZATIONNAME = "Thag Industries";
 				TargetAttributes = {
 					3397616846EEE3A64D0EE5B5 = {
+						DevelopmentTeam = 84Q69XA6W4;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -327,6 +346,8 @@
 				3397691BEBEA7AAA54DC55B9 /* THAGMapView.m in Sources */,
 				33976C1EFF340E1155AE1C95 /* THAGPlantedMineAnnotationView.m in Sources */,
 				33976BAA13C56851E433E7F4 /* THAGPlantedMineAnnotation.m in Sources */,
+				33976D574070A689921A5AAE /* THAGTrippeMineViewController.m in Sources */,
+				339765F5D71D903AA5C5E87B /* THAGTrippedMine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,10 +499,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Faceblow/Faceblow-Prefix.pch";
 				INFOPLIST_FILE = "Faceblow/Faceblow-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -492,10 +516,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Faceblow/Faceblow-Prefix.pch";
 				INFOPLIST_FILE = "Faceblow/Faceblow-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

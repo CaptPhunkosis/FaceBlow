@@ -5,13 +5,14 @@
 
 #import <Foundation/Foundation.h>
 #import "AFHTTPRequestOperationManager.h"
-
+#import "THAGTrippedMine.h"
 
 @protocol THAGApiHandlerDelegate <NSObject>
 @required
 - (void) fetchUserStateComplete:(NSDictionary *)results;
 - (void) checkForMinesComplete:(NSDictionary *)results;
 - (void) placeNewMineComplete:(NSDictionary *)results;
+- (void) tripMineComplete:(NSDictionary *)results;
 @end
 
 
@@ -25,5 +26,6 @@
 - (void)fetchUserState;
 - (void)checkForMines:(NSNumber *)latitude longitude:(NSNumber *)longitude;
 - (void)placeNewMine:(NSNumber *)latitude longitude:(NSNumber *)longitude;
+- (void)tripMine:(NSString *)mineID;
 
 @end

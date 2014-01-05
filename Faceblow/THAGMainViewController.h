@@ -8,6 +8,8 @@
 #import "THAGMapView.h"
 #import "THAGApiHandler.h"
 #import "THAGPlantedMineAnnotationView.h"
+#import "THAGTrippeMineViewController.h"
+#import "THAGTrippedMine.h"
 
 
 @interface THAGMainViewController : UIViewController <THAGMapViewDelegate, THAGApiHandlerDelegate>

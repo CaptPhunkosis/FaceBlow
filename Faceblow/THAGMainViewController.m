@@ -104,15 +104,28 @@ static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
 
 - (void)checkForMinesComplete:(NSDictionary *)results {
     if(results && [results valueForKey:@"data"] != nil){
+
         NSDictionary *data = [results valueForKey:@"data"];
         NSArray *userMines = [data objectForKey:@"users"];
-        _userCanLayMine = [userMines count] <= 0;
+        NSArray *otherMines = [data objectForKey:@"others"];
+        _userCanLayMine = [userMines count] <= 0 && [otherMines count] <= 0;
+
+        if(otherMines.count > 0){
+            NSDictionary *mineToTrip = [otherMines objectAtIndex:0];
+            [_apiHandler tripMine:[mineToTrip objectForKey:@"_id"]];
+        }
     }
 }
 
 - (void)placeNewMineComplete:(NSDictionary *)results {
-    NSLog(@"MIE PLACE %@", results);
     [_apiHandler fetchUserState];
+}
+
+
+- (void)tripMineComplete:(THAGTrippedMine *)trippedMine {
+    THAGTrippeMineViewController *trippedVC = [[THAGTrippeMineViewController alloc] initWithMine:trippedMine];
+    [trippedVC setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    [self presentViewController:trippedVC animated:YES completion:nil];
 }
 
 
