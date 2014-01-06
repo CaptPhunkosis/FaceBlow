@@ -29,6 +29,8 @@
 
 - (void)updatePlantedMines:(NSArray *)plantedMines {
     if(plantedMines != nil){
+        [self clearAllMines];
+
         for(THAGMine *plantedMine in plantedMines){
             THAGPlantedMineAnnotation *newPoint = [[THAGPlantedMineAnnotation alloc] init];
             newPoint.latitude = [NSNumber numberWithDouble:plantedMine.location.coordinate.latitude];
@@ -38,4 +40,14 @@
     }
 }
 
+
+- (void)clearAllMines {
+    id userLocation = [self userLocation];
+    NSMutableArray *pins = [[NSMutableArray alloc] initWithArray:[self annotations]];
+    if ( userLocation != nil ) {
+        [pins removeObject:userLocation];
+    }
+
+    [self removeAnnotations:pins];
+}
 @end

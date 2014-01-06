@@ -41,6 +41,10 @@
 }
 
 - (void)dismissTapped {
+    if([self.presentingViewController isKindOfClass:[THAGMainViewController class]]){
+        THAGMainViewController *mainViewController = (THAGMainViewController *)self.presentingViewController;
+        [mainViewController acknowledgeTrippedMine:_trippedMine];
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

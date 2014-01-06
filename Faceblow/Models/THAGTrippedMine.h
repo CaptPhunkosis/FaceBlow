@@ -8,9 +8,9 @@
 
 @interface THAGTrippedMine : THAGMine
 
-@property NSDate *explodedAt;
-@property NSString *bombedId;
-@property NSString *bomberId;
+@property (readonly) NSDate *explodedAt;
+@property (readonly) NSString *bombedId;
+@property (readonly) NSString *bomberId;
 
 
 -(id)initWithDataDictionary:(NSDictionary *)dataDict;

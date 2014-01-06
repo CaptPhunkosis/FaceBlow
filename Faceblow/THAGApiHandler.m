@@ -125,4 +125,25 @@ static NSString * const APIENDPOINT = @"http://localhost:3000";
     }];
 }
 
+
+- (void)acknowledgeTrippedMine:(NSString *)mineID {
+    NSString *endPoint = [NSString stringWithFormat:@"%@/user/%@/acknowledgetrip", APIENDPOINT, self.uuid];
+    NSDictionary *params = @{@"mineID": mineID};
+
+    [manager POST:endPoint parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject){
+        THAGTrippedMine *trippedMine = nil;
+
+        if(responseObject && [responseObject objectForKey:@"data"]) {
+            trippedMine = [[THAGTrippedMine alloc] initWithDataDictionary:[responseObject objectForKey:@"data"]];
+        }
+
+        if(self.delegate != nil){
+            [self.delegate acknowledgeTrippedMineComplete:trippedMine];
+        }
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+        NSLog(@"ACKNOWLEDGE TRIPPED MINE ERROR %@", error);
+    }];
+}
+
 @end

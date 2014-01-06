@@ -5,6 +5,7 @@
 
 #import <Foundation/Foundation.h>
 #import "THAGTrippedMine.h"
+#import "THAGMainViewController.h"
 
 
 @interface THAGTrippeMineViewController : UIViewController

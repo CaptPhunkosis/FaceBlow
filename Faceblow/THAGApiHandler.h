@@ -15,6 +15,7 @@
 - (void) checkForMinesComplete:(NSDictionary *)results;
 - (void) placeNewMineComplete:(NSDictionary *)results;
 - (void) tripMineComplete:(THAGTrippedMine *)results;
+- (void) acknowledgeTrippedMineComplete:(THAGTrippedMine *)results;
 @end
 
 
@@ -29,5 +30,6 @@
 - (void)checkForMines:(NSNumber *)latitude longitude:(NSNumber *)longitude;
 - (void)placeNewMine:(NSNumber *)latitude longitude:(NSNumber *)longitude;
 - (void)tripMine:(NSString *)mineID;
+- (void)acknowledgeTrippedMine:(NSString *)mineID;
 
 @end

@@ -92,7 +92,17 @@ static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
 
 
 
-#pragma mark - Data
+#pragma mark - Data Methods
+
+- (void)acknowledgeTrippedMine:(THAGTrippedMine *)trippedMine {
+    [_apiHandler acknowledgeTrippedMine:trippedMine.id];
+}
+
+- (void)acknowledgeTrippedMineComplete:(THAGTrippedMine *)trippedMine {
+    NSLog(@"COMPLETE %@", trippedMine.id);
+    [_apiHandler fetchUserState];
+}
+
 
 - (void)fetchUserStateComplete:(THAGUserState *)userState {
     if(userState){

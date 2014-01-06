@@ -9,9 +9,9 @@
 
 @interface THAGMine : NSObject
 
-@property NSString *id;
-@property CLLocation *location;
-@property NSDate *createdOn;
+@property (readonly) NSString *id;
+@property (readonly) CLLocation *location;
+@property (readonly) NSDate *createdOn;
 
 -(id)initWithDataDictionary:(NSDictionary *)dataDict;
 

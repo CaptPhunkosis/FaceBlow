@@ -13,7 +13,8 @@
 #import "THAGTrippedMine.h"
 #import "THAGTrippeMineViewController.h"
 
-
-
 @interface THAGMainViewController : UIViewController <THAGMapViewDelegate, THAGApiHandlerDelegate>
+
+- (void)acknowledgeTrippedMine:(THAGTrippedMine *)trippedMine;
+
 @end
