@@ -5,6 +5,7 @@
 
 
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "THAGMainViewController.h"
 
 
@@ -12,6 +13,7 @@ static NSString * const TESTDEVICEUID = @"abcdefghijklmnop";
 static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
 
 @implementation THAGMainViewController {
+    CLLocationManager *_locationManager;
     THAGMapView *_mapView;
     THAGApiHandler *_apiHandler;
 
@@ -27,6 +29,13 @@ static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
     NSString *deviceUUID = TESTDEVICEUID;
     //NSString *deviceUUID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     _userCanLayMine = NO;
+
+
+    //Setup location handling.
+    _locationManager = [[CLLocationManager alloc] init];
+    _locationManager.delegate = self;
+    [_locationManager startUpdatingLocation];
+
 
     //SETUP MAP
     if(!_mapView){
@@ -48,23 +57,28 @@ static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
 }
 
 
-#pragma mark - Map View
 
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-    //Disable callout
-    //userLocation.title = @"";
-
+#pragma mark - Location Services
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     MKCoordinateRegion region = {{0.0, 0.0}, {0.0, 0.0}};
-    region.center = userLocation.location.coordinate;
+    region.center = newLocation.coordinate;
     region.span.latitudeDelta = 0.01f;
     region.span.longitudeDelta = 0.01f;
     [_mapView setRegion:region animated:YES];
 
     if(_lastMineCheck == nil || [[NSDate date] timeIntervalSinceDate:_lastMineCheck] >= MINUSERUPDATEINTERVAL) {
         _lastMineCheck = [NSDate date];
-        [_apiHandler checkForMines:[NSNumber numberWithDouble:userLocation.location.coordinate.latitude] longitude:[NSNumber numberWithDouble:userLocation.location.coordinate.longitude]];
+        [_apiHandler checkForMines:[NSNumber numberWithDouble:newLocation.coordinate.latitude] longitude:[NSNumber numberWithDouble:newLocation.coordinate.longitude]];
     }
 }
+
+
+
+
+
+
+
+#pragma mark - Map View
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     if([view.annotation isKindOfClass:[MKUserLocation class]] && _userCanLayMine){
@@ -99,7 +113,6 @@ static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
 }
 
 - (void)acknowledgeTrippedMineComplete:(THAGTrippedMine *)trippedMine {
-    NSLog(@"COMPLETE %@", trippedMine.id);
     [_apiHandler fetchUserState];
 }
 
@@ -131,9 +144,18 @@ static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
 
 - (void)tripMineComplete:(THAGTrippedMine *)trippedMine {
     if(trippedMine){
-        THAGTrippeMineViewController *trippedVC = [[THAGTrippeMineViewController alloc] initWithMine:trippedMine];
-        [trippedVC setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
-        [self presentViewController:trippedVC animated:YES completion:nil];
+
+        BOOL _isBackground = [UIApplication sharedApplication].applicationState == UIApplicationStateBackground;
+        if(_isBackground){
+            UILocalNotification *notification = [[UILocalNotification alloc]  init];
+            notification.alertBody = [NSString stringWithFormat:@"BOOM.  %@ just blew your face off.", trippedMine.bomberId];
+            [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+
+        } else {
+            THAGTrippeMineViewController *trippedVC = [[THAGTrippeMineViewController alloc] initWithMine:trippedMine];
+            [trippedVC setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+            [self presentViewController:trippedVC animated:YES completion:nil];
+        }
     }
 }
 

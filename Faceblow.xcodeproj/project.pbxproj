@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0174AF19187DE667004F0AAF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174AF18187DE667004F0AAF /* CoreLocation.framework */; };
 		286400FC307D406DBB565248 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63964D5B7931411E8FF60F1A /* libPods.a */; };
 		3397601F9E4B4CC21A88191F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33976DFC315E13A51E7770CD /* Images.xcassets */; };
 		33976099B4888D858B7B176D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 339760194DAFA7029BCDDF35 /* InfoPlist.strings */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0174AF18187DE667004F0AAF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0605719349104093A2FB02F3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		3397605E4ACA1CFCBD6638D3 /* THAGPlantedMineAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THAGPlantedMineAnnotation.h; sourceTree = "<group>"; };
 		339760A3757D053E623F9F32 /* THAGUserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THAGUserState.m; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0174AF19187DE667004F0AAF /* CoreLocation.framework in Frameworks */,
 				339765F93D1EF113C28DC7F1 /* Foundation.framework in Frameworks */,
 				33976337DC3A574C4967ECD1 /* CoreGraphics.framework in Frameworks */,
 				33976C8F6EBFE427B7E7DE2A /* UIKit.framework in Frameworks */,
@@ -196,6 +199,7 @@
 		33976C6866E813D38EC66B0C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0174AF18187DE667004F0AAF /* CoreLocation.framework */,
 				33976D15D10BA5BF42B9D23E /* Foundation.framework */,
 				33976D1404BCF578C080093C /* CoreGraphics.framework */,
 				3397612D8F15CB0484ADC98D /* UIKit.framework */,

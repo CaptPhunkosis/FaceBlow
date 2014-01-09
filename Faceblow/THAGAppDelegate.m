@@ -9,7 +9,6 @@
 #import "THAGAppDelegate.h"
 
 @implementation THAGAppDelegate {
-
 }
 
 @synthesize mainViewController = _mainViewController;
@@ -29,23 +28,6 @@
     return YES;
 }
 
-- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
-    /*
-    THAGApiHandler *apiHandler = [[THAGApiHandler alloc] initWithUUID:[[[UIDevice currentDevice] identifierForVendor] UUIDString]];
-    apiHandler.delegate = self;
-    [apiHandler fetchUserState];
-    */
-    completionHandler(UIBackgroundFetchResultNewData);
-}
-
-/*
-- (void)fetchUserStateComplete:(NSDictionary *)results {
-    NSLog(@"%@", [results objectForKey:@"data"]);
-    UILocalNotification *notification = [[UILocalNotification alloc] init];
-    notification.alertBody = @"BYBYBYBYBY";
-    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
-}
-*/
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

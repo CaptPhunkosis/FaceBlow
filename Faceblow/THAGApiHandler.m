@@ -11,7 +11,7 @@ static NSString * const APIENDPOINT = @"http://localhost:3000";
 
 @implementation THAGApiHandler {
 
-    AFHTTPRequestOperationManager *manager;
+    AFHTTPRequestOperationManager *_manager;
 }
 
 @synthesize uuid = _uuid;
@@ -20,7 +20,7 @@ static NSString * const APIENDPOINT = @"http://localhost:3000";
 - (id)initWithUUID:(NSString *)uuid{
     if(self = [super init]){
         _uuid = uuid;
-        manager = [AFHTTPRequestOperationManager manager];
+        _manager = [AFHTTPRequestOperationManager manager];
     }
 
     return self;
@@ -29,7 +29,7 @@ static NSString * const APIENDPOINT = @"http://localhost:3000";
 
 - (void)fetchUserState {
     NSString *endPoint = [NSString stringWithFormat:@"%@/user/%@", APIENDPOINT, self.uuid];
-    [manager GET:endPoint parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject){
+    [_manager GET:endPoint parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject){
         THAGUserState *userState = nil;
 
         if(responseObject && [responseObject objectForKey:@"data"]){
@@ -58,7 +58,7 @@ static NSString * const APIENDPOINT = @"http://localhost:3000";
     NSString *endPoint = [NSString stringWithFormat:@"%@/user/%@/checkformines", APIENDPOINT, self.uuid];
     NSDictionary *params = @{@"latitude": latitude, @"longitude": longitude};
 
-    [manager GET:endPoint parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject){
+    [_manager GET:endPoint parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject){
         NSMutableArray *userMines = [[NSMutableArray alloc] init];
         NSMutableArray *otherMines = [[NSMutableArray alloc] init];
 
@@ -96,7 +96,7 @@ static NSString * const APIENDPOINT = @"http://localhost:3000";
     NSString *endPoint = [NSString stringWithFormat:@"%@/user/%@/plantmine", APIENDPOINT, self.uuid];
     NSDictionary *params = @{@"latitude": latitude, @"longitude": longitude};
 
-    [manager POST:endPoint parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject){
+    [_manager POST:endPoint parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject){
         if(self.delegate != nil){
             [self.delegate placeNewMineComplete:responseObject];
         }
@@ -110,7 +110,7 @@ static NSString * const APIENDPOINT = @"http://localhost:3000";
     NSString *endPoint = [NSString stringWithFormat:@"%@/user/%@/tripMine", APIENDPOINT, self.uuid];
     NSDictionary *params = @{@"mineID": mineID};
 
-    [manager POST:endPoint parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject){
+    [_manager POST:endPoint parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject){
         THAGTrippedMine *trippedMine = nil;
 
         if(responseObject && [responseObject objectForKey:@"data"]) {
@@ -130,7 +130,7 @@ static NSString * const APIENDPOINT = @"http://localhost:3000";
     NSString *endPoint = [NSString stringWithFormat:@"%@/user/%@/acknowledgetrip", APIENDPOINT, self.uuid];
     NSDictionary *params = @{@"mineID": mineID};
 
-    [manager POST:endPoint parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject){
+    [_manager POST:endPoint parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject){
         THAGTrippedMine *trippedMine = nil;
 
         if(responseObject && [responseObject objectForKey:@"data"]) {
