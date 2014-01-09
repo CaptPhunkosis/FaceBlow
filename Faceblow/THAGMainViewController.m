@@ -5,12 +5,12 @@
 
 
 #import <MapKit/MapKit.h>
-#import <CoreLocation/CoreLocation.h>
 #import "THAGMainViewController.h"
 
 
 static NSString * const TESTDEVICEUID = @"abcdefghijklmnop";
-static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
+static NSTimeInterval const MINUSERUPDATEINTERVAL = 15.0f;
+static NSTimeInterval const MINMINECHECKINTERVAL= 3.0f;
 
 @implementation THAGMainViewController {
     CLLocationManager *_locationManager;
@@ -20,6 +20,7 @@ static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
     NSMutableArray *_unackedMines;
 
     NSDate *_lastMineCheck;
+    NSDate *_lastUserCheck;
     bool _userCanLayMine;
 }
 
@@ -28,8 +29,8 @@ static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
     [self.view setBackgroundColor:[UIColor blackColor]];
 
     //SETUP DEFAULTS
-    NSString *deviceUUID = TESTDEVICEUID;
-    //NSString *deviceUUID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    //NSString *deviceUUID = TESTDEVICEUID;
+    NSString *deviceUUID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     _userCanLayMine = NO;
     _unackedMines = [[NSMutableArray alloc] init];
 
@@ -82,9 +83,14 @@ static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
     region.span.longitudeDelta = 0.01f;
     [_mapView setRegion:region animated:YES];
 
-    if(_lastMineCheck == nil || [[NSDate date] timeIntervalSinceDate:_lastMineCheck] >= MINUSERUPDATEINTERVAL) {
+    if(_lastMineCheck == nil || [[NSDate date] timeIntervalSinceDate:_lastMineCheck] >= MINMINECHECKINTERVAL) {
         _lastMineCheck = [NSDate date];
         [_apiHandler checkForMines:[NSNumber numberWithDouble:newLocation.coordinate.latitude] longitude:[NSNumber numberWithDouble:newLocation.coordinate.longitude]];
+    }
+
+    if(_lastUserCheck == nil || [[NSDate date] timeIntervalSinceDate:_lastUserCheck] >= MINUSERUPDATEINTERVAL) {
+        _lastUserCheck = [NSDate date];
+        [_apiHandler fetchUserState];
     }
 }
 
