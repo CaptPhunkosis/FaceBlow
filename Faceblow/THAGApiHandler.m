@@ -41,6 +41,11 @@ static NSString * const APIENDPOINT = @"http://localhost:3000";
                     THAGMine *newMine = [[THAGMine alloc] initWithDataDictionary:plantedMine];
                     [userState.plantedMines addObject:newMine];
                 }
+
+                for(NSDictionary *unackedMine in [data objectForKey:@"unackedMines"]){
+                    THAGTrippedMine *newTrippedMine = [[THAGTrippedMine alloc] initWithDataDictionary:unackedMine];
+                    [userState.unackedMines addObject:newTrippedMine];
+                }
             }
         }
 

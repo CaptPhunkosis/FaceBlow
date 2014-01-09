@@ -17,12 +17,14 @@
 @synthesize liveMines = _liveMines;
 @synthesize uuid = _uuid;
 @synthesize plantedMines = _plantedMines;
+@synthesize unackedMines = _unackedMines;
 
 -(id)initWithDataDictionary:(NSDictionary *)dataDict {
     self = [super init];
     if(self != nil){
 
         _plantedMines = [[NSMutableArray alloc] init];
+        _unackedMines = [[NSMutableArray alloc] init];
 
         NSString *createdOnString = [dataDict objectForKey:@"createdOn"];
         NSString *updatedOnString = [dataDict objectForKey:@"updatedOn"];

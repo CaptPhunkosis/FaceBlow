@@ -16,6 +16,7 @@
 @property int liveMines;
 @property NSString *uuid;
 @property NSMutableArray *plantedMines;
+@property NSMutableArray *unackedMines;
 
 -(id)initWithDataDictionary:(NSDictionary *)dataDict;
 

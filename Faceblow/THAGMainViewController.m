@@ -17,6 +17,8 @@ static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
     THAGMapView *_mapView;
     THAGApiHandler *_apiHandler;
 
+    NSMutableArray *_unackedMines;
+
     NSDate *_lastMineCheck;
     bool _userCanLayMine;
 }
@@ -29,6 +31,7 @@ static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
     NSString *deviceUUID = TESTDEVICEUID;
     //NSString *deviceUUID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     _userCanLayMine = NO;
+    _unackedMines = [[NSMutableArray alloc] init];
 
 
     //Setup location handling.
@@ -54,6 +57,19 @@ static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+}
+
+
+- (void)checkUnackedMines {
+    if(_unackedMines && _unackedMines.count > 0){
+        [self presentTrippedMineViewController:[_unackedMines objectAtIndex:0]];
+    }
+}
+
+-(void)presentTrippedMineViewController:(THAGTrippedMine *)trippedMine {
+    THAGTrippeMineViewController *trippedVC = [[THAGTrippeMineViewController alloc] initWithMine:trippedMine];
+    [trippedVC setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    [self presentViewController:trippedVC animated:YES completion:nil];
 }
 
 
@@ -113,13 +129,30 @@ static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
 }
 
 - (void)acknowledgeTrippedMineComplete:(THAGTrippedMine *)trippedMine {
-    [_apiHandler fetchUserState];
+    THAGTrippedMine *mineToRemove;
+    for(THAGTrippedMine *unackedMine in _unackedMines){
+        if([unackedMine.id isEqualToString:trippedMine.id]){
+            mineToRemove = unackedMine;
+        }
+    }
+
+    if(mineToRemove){
+        [_unackedMines removeObject:mineToRemove];
+    }
+
+    if(_unackedMines.count > 0){
+        [self checkUnackedMines];
+    } else {
+        [_apiHandler fetchUserState];
+    }
 }
 
 
 - (void)fetchUserStateComplete:(THAGUserState *)userState {
     if(userState){
         [_mapView updatePlantedMines:userState.plantedMines];
+        _unackedMines = [userState.unackedMines mutableCopy];
+        [self checkUnackedMines];
     }
 }
 
@@ -152,9 +185,7 @@ static NSTimeInterval const MINUSERUPDATEINTERVAL = 3.0f;
             [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
 
         } else {
-            THAGTrippeMineViewController *trippedVC = [[THAGTrippeMineViewController alloc] initWithMine:trippedMine];
-            [trippedVC setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
-            [self presentViewController:trippedVC animated:YES completion:nil];
+            [self presentTrippedMineViewController:trippedMine];
         }
     }
 }

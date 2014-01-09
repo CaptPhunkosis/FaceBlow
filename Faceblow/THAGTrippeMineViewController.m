@@ -41,11 +41,17 @@
 }
 
 - (void)dismissTapped {
+    //This whole approach feels kind of dirty.
+    __weak THAGMainViewController *_mainViewController;
     if([self.presentingViewController isKindOfClass:[THAGMainViewController class]]){
-        THAGMainViewController *mainViewController = (THAGMainViewController *)self.presentingViewController;
-        [mainViewController acknowledgeTrippedMine:_trippedMine];
+       _mainViewController  = (THAGMainViewController *) self.presentingViewController;
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
+
+    [self dismissViewControllerAnimated:YES completion:^{
+        if(_mainViewController){
+            [_mainViewController acknowledgeTrippedMine:_trippedMine];
+        }
+    }];
 }
 
 
